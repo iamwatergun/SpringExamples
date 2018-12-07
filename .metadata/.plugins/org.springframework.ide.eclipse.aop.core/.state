@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringJPAHibernate"/>
+<aop-project name="SpringJPAHibernateWithSpringData"/>
+<aop-project name="helloworld"/>
+<aop-project name="SpringJDBC"/>
+</aop-reference-model>

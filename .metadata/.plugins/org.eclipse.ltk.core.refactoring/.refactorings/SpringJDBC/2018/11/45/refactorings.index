@@ -1,0 +1,29 @@
+1541512799992	Rename type 'User'
+1541513516137	Encapsulate field 'Vendorid'
+1541513520155	Encapsulate field 'Vendorname'
+1541513524110	Encapsulate field 'Address'
+1541513526674	Encapsulate field 'Zip'
+1541513529094	Encapsulate field 'City'
+1541513532240	Encapsulate field 'Country'
+1541513534756	Encapsulate field 'Phone'
+1541513537647	Encapsulate field 'Email'
+1541513540709	Encapsulate field 'Webaddress'
+1541513543415	Encapsulate field 'IBAN'
+1541513546970	Encapsulate field 'VAT'
+1541513549466	Encapsulate field 'Datecreated'
+1541513716252	Delete element
+1541514734456	Rename type 'DBConnConf'
+1541514774257	Rename type 'IVendorinformation'
+1541515034347	Rename type 'Vendorinformation'
+1541515147064	Delete element
+1541517326364	Delete element
+1541518914469	Move 'springconfig.xml' to 'SpringDB'
+1541518951601	Copy file
+1541518955086	Delete element
+1541518965718	Delete element
+1541519086111	Copy file
+1541519089534	Delete element
+1541519105095	Copy file
+1541519107120	Delete element
+1541664785668	Copy compilation units
+1541664816662	Copy compilation units

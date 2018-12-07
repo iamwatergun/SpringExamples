@@ -1,0 +1,76 @@
+package com.ephesoft.customplugin.ephesoft_custom_plugin;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.springframework.util.Assert;
+
+import com.ephesoft.dcma.core.DCMAException;
+
+import com.ephesoft.dcma.core.annotation.PostProcess;
+
+import com.ephesoft.dcma.core.annotation.PreProcess;
+
+import com.ephesoft.dcma.core.component.ICommonConstants;
+
+import com.ephesoft.dcma.da.id.BatchInstanceID;
+
+import com.ephesoft.dcma.da.service.BatchClassPluginConfigService;
+
+import com.ephesoft.dcma.util.BackUpFileService;
+
+public class CustomPluginImpl implements CustomPlugin, ICommonConstants {
+	
+	private static final Logger LOGGER = Logger.getLogger( CustomPluginImpl.class.getName() );
+	
+	private BatchClassPluginConfigService batchClassPluginConfigService;
+
+	public CustomPluginImpl () {
+			LOGGER.log(Level.INFO, "new log entry");
+	}
+	
+	@PreProcess
+	public void preProcess(final BatchInstanceID batchInstanceID, String pluginWorkflow) {
+	
+	Assert.notNull(batchInstanceID);
+	
+	BackUpFileService.backUpBatch(batchInstanceID.getID());
+
+	}
+	
+	@PostProcess
+	public void postProcess(final BatchInstanceID batchInstanceID, String pluginWorkflow) {
+		
+		Assert.notNull(batchInstanceID);
+
+	}
+	
+	public void helloWorld(BatchInstanceID batchInstanceID, String pluginWorkflow) throws DCMAException {
+	
+		//TODO Auto-generated method stub
+		
+		String name = "";
+		
+		String propertyName = "app.name";
+		
+		name = batchClassPluginConfigService.getPluginPropertiesForBatch(batchInstanceID.getID(), "EPHESOFT_CUSTOM_PLUGIN").get(propertyName);
+		
+		System.out.println("**** Ephesoft Custom Plugin: Hello " + name + " " + batchInstanceID.getID() + " *****");
+		
+		LOGGER.log(Level.INFO, "log from hello world method");
+		
+	}
+	
+	public BatchClassPluginConfigService getBatchClassPluginService() {
+	
+		return batchClassPluginConfigService;
+	
+	}
+	
+	public void setBatchClassPluginConfigService(BatchClassPluginConfigService batchClassPluginConfigService) {
+
+		this.batchClassPluginConfigService = batchClassPluginConfigService;
+
+	}
+
+}

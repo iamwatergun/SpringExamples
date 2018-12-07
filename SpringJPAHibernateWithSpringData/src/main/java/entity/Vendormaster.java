@@ -1,0 +1,66 @@
+package entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="vendormaster")
+public class Vendormaster {
+	
+	@Column(name="vendorname")
+	private String vendorname;
+	
+	@Id
+	@Column(name="vendorid")
+	private Integer vendorid;
+	
+	@Column(name="invoicenumber")
+	private Integer invoicenumber;
+	
+	@Column(name="terms")
+	private String terms;
+	
+	@Column(name="ponumber")
+	private Integer ponumber;
+	
+	@Column(name="invoicedate")
+	private Date invoicedate;
+	
+	@Column(name="amount")
+	private Integer amount;
+	
+	public Vendormaster() {
+		
+	}
+
+	public Vendormaster(String vendorname, Integer vendorid, Integer invoicenumber, String terms, Integer ponumber, Date invoicedate, Integer amount) {
+		this.vendorname = vendorname;
+		this.vendorid = vendorid;
+		this.invoicenumber = invoicenumber;
+		this.terms = terms;
+		this.ponumber = ponumber;
+		this.invoicedate = invoicedate;
+		this.amount = amount;
+		
+	}
+	
+	public String getVendorname() {
+		return vendorname;
+	}
+
+	public void setVendorname(String vendorname) {
+		this.vendorname = vendorname;
+	}
+
+	public Integer getVendorid() {
+		return vendorid;
+	}
+
+	public void setVendorid(Integer vendorid) {
+		this.vendorid = vendorid;
+	}
+}
